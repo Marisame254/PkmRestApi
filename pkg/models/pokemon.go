@@ -10,12 +10,12 @@ var db *gorm.DB
 type Pokemon struct {
 	gorm.Model
 	Name       string `json:"name"`
-	Type       string `json:"type"`
+	Type1      string `json:"type1"`
 	Hp         int    `json:"hp"`
 	Attack     int    `json:"attack"`
-	Defence    int    `json:"defence"`
+	Defense    int    `json:"defense"`
 	Sp_attack  int    `json:"sp_attack"`
-	Sp_defence int    `json:"sp_defence"`
+	Sp_defense int    `json:"sp_defense"`
 	Speed      int    `json:"speed"`
 }
 

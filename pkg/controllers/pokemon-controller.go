@@ -74,8 +74,8 @@ func UpdatePkm(w http.ResponseWriter, r *http.Request) {
 		pkmDetails.Name = updatePkm.Name
 	}
 
-	if updatePkm.Type != "" {
-		pkmDetails.Type = updatePkm.Type
+	if updatePkm.Type1 != "" {
+		pkmDetails.Type1 = updatePkm.Type1
 	}
 
 	if updatePkm.Hp != 0 {
@@ -86,16 +86,16 @@ func UpdatePkm(w http.ResponseWriter, r *http.Request) {
 		pkmDetails.Attack = updatePkm.Attack
 	}
 
-	if updatePkm.Defence != 0 {
-		pkmDetails.Defence = updatePkm.Defence
+	if updatePkm.Defense != 0 {
+		pkmDetails.Defense = updatePkm.Defense
 	}
 
 	if updatePkm.Sp_attack != 0 {
 		pkmDetails.Sp_attack = updatePkm.Sp_attack
 	}
 
-	if updatePkm.Sp_defence != 0 {
-		pkmDetails.Sp_defence = updatePkm.Sp_defence
+	if updatePkm.Sp_defense != 0 {
+		pkmDetails.Sp_defense = updatePkm.Sp_defense
 	}
 
 	if updatePkm.Speed != 0 {
