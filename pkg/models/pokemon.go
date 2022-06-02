@@ -8,15 +8,16 @@ import (
 var db *gorm.DB
 
 type Pokemon struct {
-	gorm.Model
+	//gorm.Model
+	Pokemonid  int64  `json:"pokemonid"`
 	Name       string `json:"name"`
-	Type1      string `json:"type1"`
-	Hp         int    `json:"hp"`
-	Attack     int    `json:"attack"`
-	Defense    int    `json:"defense"`
-	Sp_attack  int    `json:"sp_attack"`
-	Sp_defense int    `json:"sp_defense"`
-	Speed      int    `json:"speed"`
+	Type1id    string `json:"type1id"`
+	Hp         int64  `json:"hp"`
+	Attack     int64  `json:"attack"`
+	Defense    int64  `json:"defense"`
+	Sp_attack  int64  `json:"sp_attack"`
+	Sp_defense int64  `json:"sp_defense"`
+	Speed      int64  `json:"speed"`
 }
 
 func init() {
@@ -32,19 +33,19 @@ func (p *Pokemon) CreatePkm() *Pokemon {
 }
 
 func GetAllPkms() []Pokemon {
-	var Pokemons []Pokemon
-	db.Find(&Pokemons)
-	return Pokemons
+	var Pkms []Pokemon
+	db.Find(&Pkms)
+	return Pkms
 }
 
 func GetPkmById(Id int64) (*Pokemon, *gorm.DB) {
 	var getPkm Pokemon
-	db := db.Where("Id = ?", Id).Find(&getPkm)
+	db := db.Where("pokemonid = ?", Id).Find(&getPkm)
 	return &getPkm, db
 }
 
 func DeletePkm(Id int64) Pokemon {
 	var pokemon Pokemon
-	db.Where("Id = ?", Id).Delete(&pokemon)
+	db.Where("pokemonid = ?", Id).Delete(&pokemon)
 	return pokemon
 }
