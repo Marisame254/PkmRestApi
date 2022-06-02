@@ -8,7 +8,9 @@ import (
 var db *gorm.DB
 
 func Connect() {
-	d, err := gorm.Open("postgres", "nue:Marisame254/pokemondb")
+	//d, err := gorm.Open("postgres", "nue:Marisame254/pokemondb")
+	dbURL := "postgres://postgres:postgres@localhost:5432/pokemondb"
+	d, err := gorm.Open("postgres", dbURL)
 	if err != nil {
 		panic(err)
 	}

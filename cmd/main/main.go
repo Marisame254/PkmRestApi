@@ -6,7 +6,7 @@ import (
 
 	"github.com/Marisame254/PkmRestApi/pkg/routes"
 	"github.com/gorilla/mux"
-	_ "github.com/junzhu/gorm/dialects/postgres"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
 func main() {
