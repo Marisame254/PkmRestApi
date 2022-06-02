@@ -9,7 +9,7 @@ var db *gorm.DB
 
 type Pokemon struct {
 	//gorm.Model
-	Pokemonid  int64  `json:"pokemonid"`
+	Pokemonid  int64  `gorm:"primaryKey" json:"pokemonid"`
 	Name       string `json:"name"`
 	Type1id    string `json:"type1id"`
 	Hp         int64  `json:"hp"`
