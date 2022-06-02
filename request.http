@@ -1,15 +1,15 @@
 ### Get all Pokemons in the database
-GET http://localhost:2540/pokemon HTTP/1.1
+GET http://localhost:2540/pokemon/ HTTP/1.1
 
 
 
 ### Get one pokemon
-GET http://localhost:2540/pokemon/0 HTTP/1.1
+GET http://localhost:2540/pokemon/1 HTTP/1.1
 
 
 
 ### Create a new pokemon
-POST http://localhost:2540/pokemon HTTP/1.1
+POST http://localhost:2540/pokemon/
 Content-Type: application/json
 
 {
@@ -31,4 +31,18 @@ DELETE http://localhost:2540/pokemon/0
 
 
 
-### 
+### Update a pokemon by pokemonid
+PUT http://localhost:2540/pokemon/0
+Content-Type: application/json
+
+{
+    "pokemonid":1,
+    "name": "raulmon",
+    "type1id": "fire",
+    "hp": 79,
+    "attack": 85,
+    "defense": 60,
+    "sp_attack": 55,
+    "sp_defense": 60,
+    "speed": 71
+}

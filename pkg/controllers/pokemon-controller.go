@@ -23,7 +23,7 @@ func GetPkm(w http.ResponseWriter, r *http.Request) {
 
 func GetPkmById(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	pkmId := vars["Id"]
+	pkmId := vars["pokemonid"]
 	Id, err := strconv.ParseInt(pkmId, 0, 0)
 	if err != nil {
 		fmt.Println("error while parsing")
@@ -46,7 +46,7 @@ func CreatePkm(w http.ResponseWriter, r *http.Request) {
 
 func DeletePkm(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	pkmId := vars["Id"]
+	pkmId := vars["pokemonid"]
 	Id, err := strconv.ParseInt(pkmId, 0, 0)
 	if err != nil {
 		fmt.Println("error while parsing")
@@ -62,7 +62,7 @@ func UpdatePkm(w http.ResponseWriter, r *http.Request) {
 	var updatePkm = &models.Pokemon{}
 	utils.ParseBody(r, updatePkm)
 	vars := mux.Vars(r)
-	pkmId := vars["Id"]
+	pkmId := vars["pokemonid"]
 	Id, err := strconv.ParseInt(pkmId, 0, 0)
 
 	if err != nil {
