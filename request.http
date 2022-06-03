@@ -13,8 +13,8 @@ POST http://localhost:4000/pokemon/
 Content-Type: application/json
 
 {
-    "pokemonid":3,
-    "name": "dalimon",
+    "pokemonid":802,
+    "name": "nuemon",
     "type1id": "10",
     "hp": 79,
     "attack": 85,
@@ -32,16 +32,16 @@ DELETE http://localhost:4000/pokemon/1
 
 
 ### Update a pokemon by pokemonid
-PUT http://localhost:4000/pokemon/2
+PUT http://localhost:4000/pokemon/100
 Content-Type: application/json
 
 {   
-    "name": "raulmon",
-    "type1id": "rock",
-    "hp": 79,
-    "attack": 85,
-    "defense": 60,
-    "sp_attack": 55,
-    "sp_defense": 60,
-    "speed": 100
+    "name": "Voltorbio",
+    "type1id": "4",
+	"hp": 40,
+	"attack": 30,
+	"defense": 50,
+	"sp_attack": 55,
+	"sp_defense": 55,
+	"speed": 1000
 }
