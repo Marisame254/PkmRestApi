@@ -1,21 +1,21 @@
 ### Get all Pokemons in the database
-GET http://localhost:2540/pokemon/ HTTP/1.1
+GET http://localhost:4000/pokemon/
 
 
 
 ### Get one pokemon
-GET http://localhost:2540/pokemon/2 HTTP/1.1
+GET http://localhost:4000/pokemon/100
 
 
 
 ### Create a new pokemon
-POST http://localhost:2540/pokemon/
+POST http://localhost:4000/pokemon/
 Content-Type: application/json
 
 {
-    "pokemonid":5,
+    "pokemonid":3,
     "name": "dalimon",
-    "type1id": "fairy",
+    "type1id": "10",
     "hp": 79,
     "attack": 85,
     "defense": 60,
@@ -27,21 +27,21 @@ Content-Type: application/json
 
 
 ### Delete a pokemon
-DELETE http://localhost:2540/pokemon/2
+DELETE http://localhost:4000/pokemon/1
 
 
 
 ### Update a pokemon by pokemonid
-PUT http://localhost:2540/pokemon/3
+PUT http://localhost:4000/pokemon/2
 Content-Type: application/json
 
-{
+{   
     "name": "raulmon",
-    "type1id": "fire",
+    "type1id": "rock",
     "hp": 79,
     "attack": 85,
     "defense": 60,
     "sp_attack": 55,
     "sp_defense": 60,
-    "speed": 71
+    "speed": 100
 }

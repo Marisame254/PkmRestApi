@@ -13,6 +13,7 @@ import (
 
 var NewPkm models.Pokemon
 
+// Function to Get all pokemons ================================
 func GetPkm(w http.ResponseWriter, r *http.Request) {
 	newPkms := models.GetAllPkms()
 	res, _ := json.Marshal(newPkms)
@@ -21,6 +22,7 @@ func GetPkm(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
+// Function to get a pokemon by Id ============================
 func GetPkmById(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	pkmId := vars["Id"]
@@ -35,6 +37,7 @@ func GetPkmById(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
+// Function to Create a pokemon ==============================
 func CreatePkm(w http.ResponseWriter, r *http.Request) {
 	CreatePkm := &models.Pokemon{}
 	utils.ParseBody(r, CreatePkm)
@@ -44,6 +47,7 @@ func CreatePkm(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
+// Function to delete a pokemon =============================
 func DeletePkm(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	pkmId := vars["Id"]
@@ -58,6 +62,7 @@ func DeletePkm(w http.ResponseWriter, r *http.Request) {
 	w.Write(res)
 }
 
+// Function to update a pokemon =============================
 func UpdatePkm(w http.ResponseWriter, r *http.Request) {
 	var updatePkm = &models.Pokemon{}
 	utils.ParseBody(r, updatePkm)

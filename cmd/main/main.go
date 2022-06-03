@@ -10,8 +10,9 @@ import (
 )
 
 func main() {
-	r := mux.NewRouter()
-	routes.RegisterPkmRoutes(r)
-	http.Handle("/", r)
-	log.Fatal(http.ListenAndServe("localhost:2540", r))
+	router := mux.NewRouter()
+	routes.RegisterPkmRoutes(router)
+	http.Handle("/", router)
+	log.Println("\nAPI is running on port 4000")
+	http.ListenAndServe("localhost:4000", router)
 }
