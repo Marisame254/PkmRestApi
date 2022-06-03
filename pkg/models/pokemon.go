@@ -8,10 +8,9 @@ import (
 var db *gorm.DB
 
 type Pokemon struct {
-	//gorm.Model
-	Pokemonid  int64  `json:"pokemonid" gorm:"primary_key"`
+	gorm.Model
 	Name       string `json:"name"`
-	Type1id    string `json:"type1id"`
+	Type       string `json:"type"`
 	Hp         int64  `json:"hp"`
 	Attack     int64  `json:"attack"`
 	Defense    int64  `json:"defense"`
@@ -40,12 +39,12 @@ func GetAllPkms() []Pokemon {
 
 func GetPkmById(Id int64) (*Pokemon, *gorm.DB) {
 	var getPkm Pokemon
-	db := db.Where("pokemonid = ?", Id).Find(&getPkm)
+	db := db.Where("id = ?", Id).Find(&getPkm)
 	return &getPkm, db
 }
 
 func DeletePkm(Id int64) Pokemon {
 	var pokemon Pokemon
-	db.Where("pokemonid = ?", Id).Delete(&pokemon)
+	db.Where("id = ?", Id).Delete(&pokemon)
 	return pokemon
 }

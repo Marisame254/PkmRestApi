@@ -79,8 +79,8 @@ func UpdatePkm(w http.ResponseWriter, r *http.Request) {
 		pkmDetails.Name = updatePkm.Name
 	}
 
-	if updatePkm.Type1id != "" {
-		pkmDetails.Type1id = updatePkm.Type1id
+	if updatePkm.Type != "" {
+		pkmDetails.Type = updatePkm.Type
 	}
 
 	if updatePkm.Hp != 0 {
