@@ -4,7 +4,7 @@ GET http://localhost:4000/pokemon/
 
 
 ### Get one pokemon
-GET http://localhost:4000/pokemon/1
+GET http://localhost:4000/pokemon/802
 
 
 
@@ -13,6 +13,7 @@ POST http://localhost:4000/pokemon/
 Content-Type: application/json
 
 {
+    "id": 802,
     "name": "nuemon",
     "type": "water",
     "hp": 79,
